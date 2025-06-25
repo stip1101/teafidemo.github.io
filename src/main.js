@@ -167,7 +167,7 @@ document.querySelector('#app').innerHTML = `
             </svg>
           </div>
           <h3>Tea Fan</h3>
-          <p>Active regular contributor involved in content creation, community support, discussions, and basic feedback activities.</p>
+          <p>Active contributor in content creation, community support and feedback activities.</p>
         </div>
         
         <div class="progression-arrow-modern">
@@ -186,7 +186,7 @@ document.querySelector('#app').innerHTML = `
             </svg>
           </div>
           <h3>Tea Enjoyer</h3>
-          <p>Deeper involvement: participation in events, assisting in organizational activities, product discussions, community building.</p>
+          <p>Deeper involvement in events, organizational activities and community building.</p>
         </div>
         
         <div class="progression-arrow-modern">
@@ -205,7 +205,7 @@ document.querySelector('#app').innerHTML = `
             </svg>
           </div>
           <h3>Tea Chad</h3>
-          <p>Core leaders of the community who shape the culture, attract new members, organize key activities, and actively contribute to product direction.</p>
+          <p>Community leaders who shape culture, attract members and guide product direction.</p>
         </div>
       </div>
       
@@ -233,49 +233,7 @@ document.querySelector('#app').innerHTML = `
     </div>
   </section>
 
-  <!-- Side Roles Section -->
-  <section class="side-roles">
-    <div class="container">
-      <h2 class="section-title">Special Skills & <span class="gradient-text">Badges</span></h2>
-      <p class="section-subtitle">Awarded organically based on your unique talents and contributions</p>
-      
-      <div class="badges-grid">
-        <div class="badge-card modern">
-          <div class="badge-icon-modern">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="#FF007A" stroke-width="2" fill="none"/>
-              <path d="M7 10L12 13L17 10" stroke="#FF007A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Sugar Shaman</h3>
-          <p>Visual content creators who make TeaFi beautiful</p>
-        </div>
-        
-        <div class="badge-card modern">
-          <div class="badge-icon-modern">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="#FF007A" stroke-width="2" fill="none"/>
-              <line x1="8" y1="21" x2="16" y2="21" stroke="#FF007A" stroke-width="2"/>
-              <line x1="12" y1="17" x2="12" y2="21" stroke="#FF007A" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Game Master</h3>
-          <p>Community games and event organizers</p>
-        </div>
-        
-        <div class="badge-card modern">
-          <div class="badge-icon-modern">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <polyline points="16,18 22,12 16,6" stroke="#FF007A" stroke-width="2" fill="none"/>
-              <polyline points="8,6 2,12 8,18" stroke="#FF007A" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-          <h3>Code Brewer</h3>
-          <p>Technical contributors and developers</p>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- Contributor Check Section -->
   <section class="contributor-check">
@@ -574,7 +532,7 @@ function initInteractivity() {
             targetElement = document.querySelector('.progression');
             break;
           case 'progression':
-            targetElement = document.querySelector('.side-roles');
+            targetElement = document.querySelector('.contributor-check');
             break;
           case 'faq':
             targetElement = document.querySelector('.faq');
