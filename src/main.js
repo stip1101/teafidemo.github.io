@@ -437,8 +437,38 @@ document.querySelector('#app').innerHTML = `
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-                  <img src="/whitesvg.svg" alt="TeaFi Logo" class="footer-logo" />
-        <p>Building the future of Web3, one cup at a time.</p>
+        <div class="footer-brand">
+          <img src="/whitesvg.svg" alt="TeaFi Logo" class="footer-logo" />
+          <p class="footer-tagline">Building the future of Web3, one cup at a time.</p>
+        </div>
+        
+        <div class="footer-social">
+          <h3 class="social-title">Join Our Community</h3>
+          <div class="social-links">
+            <a href="https://github.com/Tea-Fi" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://t.me/TeaFi_Official" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-telegram"></i>
+              <span>Telegram</span>
+            </a>
+            <a href="https://medium.com/@teaFi" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-medium"></i>
+              <span>Medium</span>
+            </a>
+            <a href="https://x.com/TeaFi_Official" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-x-twitter"></i>
+              <span>Twitter</span>
+            </a>
+            <a href="https://discord.com/invite/DUVua49zrf" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-discord"></i>
+              <span>Discord</span>
+            </a>
+          </div>
+        </div>
+        
+
       </div>
     </div>
   </footer>
