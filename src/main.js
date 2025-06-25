@@ -311,6 +311,15 @@ document.querySelector('#app').innerHTML = `
           <div class="faq-answer">
             <div class="faq-content">
               <p>No forms. Just make your first contribution.</p>
+              <button class="cta-button-enhanced primary" style="margin-top: 16px;">
+                <span class="cta-button-text">Start Contributing</span>
+                <div class="cta-button-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="cta-button-bg"></div>
+              </button>
             </div>
           </div>
         </div>

@@ -335,21 +335,7 @@ body {
   overflow: hidden;
 }
 
-.flow-step::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-text);
-  opacity: 0;
-  transition: var(--transition);
-}
 
-.flow-step:hover::before {
-  opacity: 1;
-}
 
 .flow-step:hover {
   transform: translateY(-8px);
@@ -426,15 +412,7 @@ body {
   backdrop-filter: blur(20px);
 }
 
-.first-task-highlight::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: var(--gradient-text);
-}
+
 
 .first-task-highlight::after {
   content: '';
@@ -1032,21 +1010,7 @@ section {
   justify-content: space-between;
 }
 
-.role-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-text);
-  opacity: 0;
-  transition: var(--transition);
-}
 
-.role-card:hover::before {
-  opacity: 1;
-}
 
 .role-card:hover {
   transform: translateY(-12px) scale(1.02);
@@ -1147,15 +1111,7 @@ section {
   justify-content: space-between;
 }
 
-.ambassador-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: var(--gradient-text);
-}
+
 
 .ambassador-card:hover {
   transform: translateY(-12px) scale(1.02);
@@ -1261,17 +1217,7 @@ section {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.faq-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-text);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
+
 
 .faq-item:hover {
   border-color: var(--accent-pink);
@@ -1280,9 +1226,7 @@ section {
   background: linear-gradient(135deg, rgba(255, 0, 122, 0.1) 0%, rgba(44, 15, 38, 0.3) 100%);
 }
 
-.faq-item:hover::before {
-  opacity: 1;
-}
+
 
 .faq-item.active {
   border-color: var(--accent-pink);
@@ -1290,9 +1234,7 @@ section {
   background: linear-gradient(135deg, rgba(255, 0, 122, 0.12) 0%, rgba(44, 15, 38, 0.4) 100%);
 }
 
-.faq-item.active::before {
-  opacity: 1;
-}
+
 
 .faq-question {
   padding: 28px 32px;
@@ -2015,21 +1957,7 @@ section {
   justify-content: space-between;
 }
 
-.role-card.modern::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-text);
-  opacity: 0;
-  transition: var(--transition);
-}
 
-.role-card.modern:hover::before {
-  opacity: 1;
-}
 
 .role-card.modern:hover {
   transform: translateY(-12px) scale(1.02);
@@ -2101,15 +2029,7 @@ section {
   justify-content: space-between;
 }
 
-.ambassador-card.modern::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: var(--gradient-text);
-}
+
 
 .ambassador-card.modern:hover {
   transform: translateY(-12px) scale(1.02);
