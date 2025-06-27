@@ -594,14 +594,11 @@ function initInteractivity() {
   });
 
   // Smooth scroll for CTA buttons
-  const ctaButtons = document.querySelectorAll('.cta-button, .cta-button-enhanced');
+  const ctaButtons = document.querySelectorAll('.cta-button, .cta-button-enhanced, .cta-button-hero');
   ctaButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       if (button.id === 'getStartedBtn') {
-        e.preventDefault();
-        document.querySelector('.progression').scrollIntoView({ 
-          behavior: 'smooth' 
-        });
+        window.open('https://discord.com/invite/DUVua49zrf', '_blank');
       } else if (button.id === 'joinDiscordBtn') {
         window.open('https://discord.com/invite/DUVua49zrf', '_blank');
       }
