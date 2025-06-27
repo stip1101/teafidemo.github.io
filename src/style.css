@@ -22,7 +22,8 @@
   --gradient-card: linear-gradient(135deg, rgba(255, 0, 122, 0.1) 0%, rgba(44, 15, 38, 0.3) 100%);
   
   /* Fonts */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-headline: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* Spacing */
   --container-max-width: 1200px;
@@ -102,6 +103,7 @@ body {
   color: var(--accent-pink);
   letter-spacing: 0.5px;
   text-transform: none;
+  font-family: var(--font-headline);
 }
 
 .nav-links {
@@ -232,6 +234,7 @@ body {
   margin-bottom: 32px;
   letter-spacing: -0.02em;
   animation: slideInFromLeft 0.8s ease-out 0.2s both;
+  font-family: var(--font-headline);
 }
 
 .gradient-text {
@@ -246,10 +249,11 @@ body {
 
 .hero-subtitle {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
   color: var(--text-gray);
   animation: slideInFromLeft 0.8s ease-out 0.4s both;
+  font-family: var(--font-family);
 }
 
 .hero-description {
@@ -301,13 +305,15 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: var(--font-headline);
 }
 
 .getting-started-subtitle {
   font-size: 1.25rem;
   color: var(--text-gray);
   margin-bottom: 60px;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: var(--font-family);
 }
 
 .task-flow-modern {
@@ -385,6 +391,7 @@ body {
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--text-white);
+  font-family: var(--font-headline);
 }
 
 .flow-content p {
@@ -464,6 +471,7 @@ body {
   margin-bottom: 16px;
   color: var(--text-white);
   line-height: 1.3;
+  font-family: var(--font-headline);
 }
 
 .task-highlight-description {
@@ -968,6 +976,7 @@ section {
   text-align: center;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
+  font-family: var(--font-headline);
 }
 
 .section-subtitle {
@@ -975,6 +984,8 @@ section {
   color: var(--text-gray);
   text-align: center;
   margin-bottom: 60px;
+  font-weight: 700;
+  font-family: var(--font-family);
 }
 
 /* Progression System */
@@ -1041,6 +1052,7 @@ section {
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--text-white);
+  font-family: var(--font-headline);
 }
 
 .role-card p {
@@ -1168,6 +1180,7 @@ section {
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--text-white);
+  font-family: var(--font-headline);
 }
 
 .contributor-card p {
@@ -1248,6 +1261,7 @@ section {
   font-weight: 700;
   transition: all 0.3s ease;
   position: relative;
+  font-family: var(--font-headline);
 }
 
 .faq-question:hover {
@@ -1443,8 +1457,9 @@ section {
   font-size: 1.25rem;
   color: var(--text-gray);
   margin-bottom: 32px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.6;
+  font-family: var(--font-family);
 }
 
 .cta-actions {

@@ -21,7 +21,7 @@ document.querySelector('#app').innerHTML = `
       </div>
       
       <div class="nav-right">
-        <a href="https://discord.gg/teafi" class="nav-cta" target="_blank">Join Discord</a>
+        <a href="https://discord.com/invite/DUVua49zrf" class="nav-cta" target="_blank">Join Discord</a>
       </div>
     </div>
   </nav>
@@ -603,7 +603,7 @@ function initInteractivity() {
           behavior: 'smooth' 
         });
       } else if (button.id === 'joinDiscordBtn') {
-        window.open('https://discord.gg/teafi', '_blank');
+        window.open('https://discord.com/invite/DUVua49zrf', '_blank');
       }
     });
   });
