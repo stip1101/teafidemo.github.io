@@ -121,7 +121,7 @@ document.querySelector('#app').innerHTML = `
             <div class="task-highlight-badge">FIRST TASK</div>
             <div class="task-highlight-timer">⏱️ Takes 10 minutes</div>
           </div>
-          <h3 class="task-highlight-title">Create a post about downloading the TeaFi App and making a swap</h3>
+          <h3 class="task-highlight-title">Create a post about TeaFi Web App and making a swap</h3>
           <p class="task-highlight-description">Share your experience with the community and help others discover TeaFi</p>
           
           <div class="task-highlight-cta">
@@ -299,6 +299,40 @@ document.querySelector('#app').innerHTML = `
       <h2 class="section-title">Spill The <span class="gradient-text">Tea - FAQ</span></h2>
       
       <div class="faq-container">
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">
+            <span class="faq-text">What is Tea-Fi?</span>
+            <div class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-content">
+              <p>Tea-Fi is a self-custodial DeFi platform that unifies trading, staking, cross-chain swaps, and yield tools in one place.</p>
+              <p>It simplifies crypto management with features like Easy-Gas (pay gas in stablecoins), SuperSwap (one-click cross-chain swaps), and a unified dashboard - all while keeping you in full control of your assets.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">
+            <span class="faq-text">Why is Tea-Fi essential?</span>
+            <div class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-content">
+              <p>Because it solves DeFi's biggest pain points - fragmentation, complexity, and gas limitations.</p>
+              <p>Tea-Fi streamlines everything into a seamless experience, making DeFi accessible, efficient, and truly user-first.</p>
+            </div>
+          </div>
+        </div>
+        
         <div class="faq-item" onclick="toggleFAQ(this)">
           <div class="faq-question">
             <span class="faq-text">Do I need to apply?</span>
