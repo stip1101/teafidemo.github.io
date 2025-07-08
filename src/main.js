@@ -144,7 +144,7 @@ document.querySelector('#app').innerHTML = `
       <div class="progression-track">
         <div class="role-card modern" data-role="tea-og">
           <div class="role-icon-modern">
-            <img src="/tea-bag-tea.svg" alt="Tea-OG" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(70%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(1) contrast(1);" />
+            <img src="/tea-bag-tea.svg" alt="Tea-OG" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea-OG</h3>
           <p>Entry role for anyone who makes the first public contribution. The first step into the ecosystem.</p>
@@ -158,7 +158,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-fan">
           <div class="role-icon-modern">
-            <img src="/tea-bag-tea.svg" alt="Tea Fan" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(51%) sepia(98%) saturate(2618%) hue-rotate(298deg) brightness(105%) contrast(101%);" />
+            <img src="/tea-svg.svg" alt="Tea Fan" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea Fan</h3>
           <p>Active contributor in content creation, community support and feedback activities.</p>
@@ -172,7 +172,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-enjoyer">
           <div class="role-icon-modern">
-            <img src="/tea-bag-tea.svg" alt="Tea Enjoyer" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(6500%) hue-rotate(313deg) brightness(96%) contrast(108%);" />
+            <img src="/tea-cup-coffee.svg" alt="Tea Enjoyer" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea Enjoyer</h3>
           <p>Deeper involvement in events, organizational activities and community building.</p>
@@ -186,7 +186,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-chad">
           <div class="role-icon-modern">
-            <img src="/tea-bag-tea.svg" alt="Tea Chad" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7000%) hue-rotate(320deg) brightness(130%) contrast(120%);" />
+            <img src="/tea-pot.svg" alt="Tea Chad" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea Chad</h3>
           <p>Community leaders who shape culture, attract members and guide product direction.</p>
@@ -194,10 +194,10 @@ document.querySelector('#app').innerHTML = `
       </div>
       
       <div class="ambassador-track">
-        <div class="ambassador-card modern">
+                  <div class="ambassador-card modern">
           <div class="role-icon-modern special">
             <div style="position: relative; width: 48px; height: 48px;">
-              <img src="/tea-bag-tea.svg" alt="Ambassador Tea Bag" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7000%) hue-rotate(320deg) brightness(130%) contrast(120%);" />
+              <img src="/teaamb.svg" alt="Ambassador" style="width: 48px; height: 48px;" />
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="position: absolute; top: -12px; left: 14px;">
                 <defs>
                   <linearGradient id="crownGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -268,8 +268,7 @@ document.querySelector('#app').innerHTML = `
         <div class="contributor-card modern">
           <div class="contributor-icon-modern">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <path d="M21 11.5A8.38 8.38 0 0 1 14.5 18A8.38 8.38 0 0 1 7 11.5A8.38 8.38 0 0 1 14.5 5A8.38 8.38 0 0 1 21 11.5Z" stroke="#FF007A" stroke-width="2" fill="none"/>
-              <path d="M11.5 7H8L14 17L10.5 7Z" stroke="#FF007A" stroke-width="2" fill="none"/>
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#FF007A" stroke-width="2" fill="none"/>
             </svg>
           </div>
           <h3>Community Members</h3>
@@ -448,21 +447,7 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
       
-      <!-- Collaboration Section -->
-      <div class="collaboration-section">
-        <h2 class="collaboration-title">Collaboration</h2>
-        <div class="collaboration-logos">
-          <div class="collaboration-logo">
-            <img src="/teaficolab.svg" alt="TeaFi Colab" class="colab-logo" />
-          </div>
-          <div class="collaboration-connector">
-            <span class="connector-text">X</span>
-          </div>
-          <div class="collaboration-logo">
-            <img src="/solus.svg" alt="Solus" class="solus-logo" />
-          </div>
-        </div>
-      </div>
+
     </div>
   </section>
 
@@ -471,7 +456,17 @@ document.querySelector('#app').innerHTML = `
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="/whitesvg.svg" alt="TeaFi Logo" class="footer-logo" />
+          <div class="collaboration-logos">
+            <div class="collaboration-logo">
+              <img src="/teaficolab.svg" alt="TeaFi Colab" class="colab-logo" />
+            </div>
+            <div class="collaboration-connector">
+              <span class="connector-text">X</span>
+            </div>
+            <div class="collaboration-logo">
+              <img src="/solus.svg" alt="Solus" class="solus-logo" />
+            </div>
+          </div>
           <p class="footer-tagline">Building the future of Web3, one cup at a time.</p>
         </div>
         
