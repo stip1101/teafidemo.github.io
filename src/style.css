@@ -2073,6 +2073,22 @@ section {
   
   .hero-logo {
     width: 300px;
+    animation: logo-float-mobile 6s ease-in-out infinite;
+  }
+  
+  @keyframes logo-float-mobile {
+    0%, 100% {
+      transform: translateY(120px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(112px) rotate(1deg);
+    }
+    50% {
+      transform: translateY(115px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(108px) rotate(-1deg);
+    }
   }
   
   .logo-glow {
@@ -2638,10 +2654,12 @@ section {
   
   .collaboration-logo:first-child {
     order: 1;
+    transform: translateY(10px);
   }
   
   .collaboration-logo:last-child {
     order: 3;
+    transform: translateX(5px);
   }
   
   .colab-logo {
