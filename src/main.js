@@ -144,10 +144,7 @@ document.querySelector('#app').innerHTML = `
       <div class="progression-track">
         <div class="role-card modern" data-role="tea-og">
           <div class="role-icon-modern">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z" stroke="#FF007A" stroke-width="2" fill="rgba(255, 0, 122, 0.1)"/>
-              <circle cx="12" cy="12" r="2" fill="#FF007A"/>
-            </svg>
+            <img src="/tea-bag-tea.svg" alt="Tea-OG" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(70%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(1) contrast(1);" />
           </div>
           <h3>Tea-OG</h3>
           <p>Entry role for anyone who makes the first public contribution. The first step into the ecosystem.</p>
@@ -161,10 +158,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-fan">
           <div class="role-icon-modern">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#FF007A" stroke-width="2" fill="rgba(255, 0, 122, 0.2)"/>
-              <path d="M8 8h8M8 12h6" stroke="#FF007A" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+            <img src="/tea-bag-tea.svg" alt="Tea Fan" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(51%) sepia(98%) saturate(2618%) hue-rotate(298deg) brightness(105%) contrast(101%);" />
           </div>
           <h3>Tea Fan</h3>
           <p>Active contributor in content creation, community support and feedback activities.</p>
@@ -178,12 +172,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-enjoyer">
           <div class="role-icon-modern">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="#FF007A"/>
-              <path d="M21 9V7L15 6L13 2H11L9 6L3 7V9L9 10L11 22H13L15 10L21 9Z" stroke="#FF007A" stroke-width="2" fill="rgba(255, 0, 122, 0.15)"/>
-              <circle cx="8" cy="14" r="1.5" fill="#FF007A" opacity="0.7"/>
-              <circle cx="16" cy="14" r="1.5" fill="#FF007A" opacity="0.7"/>
-            </svg>
+            <img src="/tea-bag-tea.svg" alt="Tea Enjoyer" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(6500%) hue-rotate(313deg) brightness(96%) contrast(108%);" />
           </div>
           <h3>Tea Enjoyer</h3>
           <p>Deeper involvement in events, organizational activities and community building.</p>
@@ -197,12 +186,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-chad">
           <div class="role-icon-modern">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z" stroke="#FF007A" stroke-width="2" fill="rgba(255, 0, 122, 0.2)"/>
-              <path d="M7 14L12 19L17 14" stroke="#FF007A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="12" cy="6" r="2" fill="#FF007A"/>
-              <rect x="10" y="10" width="4" height="2" rx="1" fill="#FF007A" opacity="0.8"/>
-            </svg>
+            <img src="/tea-bag-tea.svg" alt="Tea Chad" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7000%) hue-rotate(320deg) brightness(130%) contrast(120%);" />
           </div>
           <h3>Tea Chad</h3>
           <p>Community leaders who shape culture, attract members and guide product direction.</p>
@@ -212,19 +196,21 @@ document.querySelector('#app').innerHTML = `
       <div class="ambassador-track">
         <div class="ambassador-card modern">
           <div class="role-icon-modern special">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-              <defs>
-                <linearGradient id="crownGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#FF007A;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#FF4DA6;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              <path d="M5 16L3 6L7.5 10L12 4L16.5 10L21 6L19 16H5Z" stroke="#FF007A" stroke-width="2" fill="url(#crownGradient)"/>
-              <path d="M12 2L13.09 6.26L17 7L13.09 7.74L12 12L10.91 7.74L7 7L10.91 6.26L12 2Z" fill="#FFD700"/>
-              <circle cx="8" cy="12" r="1" fill="#FFD700"/>
-              <circle cx="16" cy="12" r="1" fill="#FFD700"/>
-              <path d="M5 16H19V18C19 19.1 18.1 20 17 20H7C5.9 20 5 19.1 5 18V16Z" fill="rgba(255, 0, 122, 0.3)"/>
-            </svg>
+            <div style="position: relative; width: 48px; height: 48px;">
+              <img src="/tea-bag-tea.svg" alt="Ambassador Tea Bag" style="width: 48px; height: 48px; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7000%) hue-rotate(320deg) brightness(130%) contrast(120%);" />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="position: absolute; top: -12px; left: 14px;">
+                <defs>
+                  <linearGradient id="crownGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <path d="M5 16L3 6L7.5 10L12 4L16.5 10L21 6L19 16H5Z" stroke="#FFD700" stroke-width="1.5" fill="url(#crownGradient)"/>
+                <path d="M12 2L13.09 6.26L17 7L13.09 7.74L12 12L10.91 7.74L7 7L10.91 6.26L12 2Z" fill="#FFD700"/>
+                <circle cx="8" cy="12" r="0.8" fill="#FFD700"/>
+                <circle cx="16" cy="12" r="0.8" fill="#FFD700"/>
+              </svg>
+            </div>
           </div>
           <h3>Ambassador</h3>
           <p>KOLs, public partners, and external network builders. Highly visible extension of TeaFi's external communication.</p>
@@ -298,142 +284,139 @@ document.querySelector('#app').innerHTML = `
     <div class="container">
       <h2 class="section-title">Spill The <span class="gradient-text">Tea - FAQ</span></h2>
       
-      <div class="faq-container">
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">What is Tea-Fi?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+      <div class="faq-container two-column">
+        <!-- First Column -->
+        <div class="faq-column">
+                     <div class="faq-item" onclick="toggleFAQ(this, event)">
+             <div class="faq-question">
+               <span class="faq-text">What is Tea-Fi?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
             </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>Tea-Fi is a self-custodial DeFi platform that unifies trading, staking, cross-chain swaps, and yield tools in one place.</p>
-              <p>It simplifies crypto management with features like Easy-Gas (pay gas in stablecoins), SuperSwap (one-click cross-chain swaps), and a unified dashboard - all while keeping you in full control of your assets.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">Why is Tea-Fi essential?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>Because it solves DeFi's biggest pain points - fragmentation, complexity, and gas limitations.</p>
-              <p>Tea-Fi streamlines everything into a seamless experience, making DeFi accessible, efficient, and truly user-first.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">Do I need to apply?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>No forms. Just make your first contribution.</p>
-              <button class="cta-button-enhanced primary" style="margin-top: 16px;">
-                <span class="cta-button-text">Start Contributing</span>
-                <div class="cta-button-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+            <div class="faq-answer">
+              <div class="faq-content">
+                <p>No more juggling wallets or switching between 12 tabs just to complete a single transaction.</p>
+                <p>Tea-Fi is a self-custodial, cross-chain DeFi platform that unifies your entire Web3 journey. It brings together swaps, staking, bridging, gas payments, and yield generation - all in one seamless, intuitive interface designed for clarity, not chaos.</p>
+                
+                                 <div class="faq-item sub-item" onclick="toggleFAQ(this, event)">
+                  <div class="faq-question">
+                    <span class="faq-text">How does Tea-Fi simplify DeFi?</span>
+                    <div class="faq-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="faq-answer">
+                    <div class="faq-content">
+                      <p>Tea-Fi eliminates the need for multiple wallets, bridges, and aggregators. You get a unified command center with features like:</p>
+                      <p><strong>Easy-Gas:</strong> Pay gas fees using stablecoins or synthetic assets - even without holding native tokens.</p>
+                      <p><strong>SuperSwap:</strong> Cross-chain swaps and bridging in one click, with all background logic handled for you.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="cta-button-bg"></div>
-              </button>
+              </div>
+            </div>
+          </div>
+
+                                <div class="faq-item" onclick="toggleFAQ(this, event)">
+             <div class="faq-question">
+               <span class="faq-text">How do I get started?</span>
+               <div class="faq-icon">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                   <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </div>
+             </div>
+             <div class="faq-answer">
+               <div class="faq-content">
+                 <p>No forms, no applications. Simply complete your first contribution to unlock the Tea-OG role - your entry point into the program, gated channels, and future opportunities.</p>
+                 <button class="cta-button-enhanced primary" style="margin-top: 16px;" onclick="window.open('https://discord.com/invite/DUVua49zrf', '_blank'); event.stopPropagation();">
+                   <span class="cta-button-text">Start Contributing</span>
+                   <div class="cta-button-icon">
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                       <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                     </svg>
+                   </div>
+                   <div class="cta-button-bg"></div>
+                 </button>
+               </div>
+             </div>
+           </div>
+
+                     <div class="faq-item" onclick="toggleFAQ(this, event)">
+             <div class="faq-question">
+               <span class="faq-text">How do I level up?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-content">
+                <p>Our system rewards consistency and value. The more you contribute - in creativity, effort, or impact - the more recognition and opportunities you unlock.</p>
+                <p>Progression isn't based on grinding, but on meaningful engagement.</p>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">What type of contributions count?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+
+        <!-- Second Column -->
+        <div class="faq-column">
+                     <div class="faq-item" onclick="toggleFAQ(this, event)">
+             <div class="faq-question">
+               <span class="faq-text">What type of contributions count?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-content">
+                <p>We value quality over quantity. Here's what counts:</p>
+                <p>• Informative and engaging content (threads, videos, infographics)</p>
+                <p>• Meme creation and viral formats</p>
+                <p>• Community support and active participation in discussions</p>
+                <p>• Providing structured feedback on the product and ambassador program</p>
+              </div>
             </div>
           </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>Content, memes, community activity, events, feedback.</p>
+
+                     <div class="faq-item" onclick="toggleFAQ(this, event)">
+             <div class="faq-question">
+               <span class="faq-text">Can I lose my role?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-content">
+                <p>Roles remain, but active contributors naturally stay at the top.</p>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">How do I level up?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+
+                     <div class="faq-item" onclick="toggleFAQ(this, event)">
+             <div class="faq-question">
+               <span class="faq-text">What Rewards can I get?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
             </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>Every contribution adds value. The more you contribute, the further you progress.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">What makes Tea Chad exclusive?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>Tea Chads shape the product, lead regions, host events, and define community culture.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">Can I lose my role?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>Roles remain, but active contributors naturally stay at the top.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="faq-item" onclick="toggleFAQ(this)">
-          <div class="faq-question">
-            <span class="faq-text">Where do I start?</span>
-            <div class="faq-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="faq-svg">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <div class="faq-content">
-              <p>Begin by completing your first task and receiving your Tea-OG role.</p>
+            <div class="faq-answer">
+              <div class="faq-content">
+                <p>Active contributors earn more than just badges - they gain recognition, early access to features, private contributor perks, and evolving reward opportunities.</p>
+                <p>Over time, consistently valuable contributors may unlock enhanced incentives tied to their impact.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -461,6 +444,22 @@ document.querySelector('#app').innerHTML = `
                 <div class="cta-button-bg"></div>
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Collaboration Section -->
+      <div class="collaboration-section">
+        <h2 class="collaboration-title">Collaboration</h2>
+        <div class="collaboration-logos">
+          <div class="collaboration-logo">
+            <img src="/teaficolab.svg" alt="TeaFi Colab" class="colab-logo" />
+          </div>
+          <div class="collaboration-connector">
+            <span class="connector-text">X</span>
+          </div>
+          <div class="collaboration-logo">
+            <img src="/solus.svg" alt="Solus" class="solus-logo" />
           </div>
         </div>
       </div>
@@ -500,6 +499,9 @@ document.querySelector('#app').innerHTML = `
               <span>Discord</span>
             </a>
           </div>
+          <a href="https://t.me/StanislavSolus" class="dev-contact" target="_blank" rel="noopener">
+            Stay in touch with the Ambassador Program development team
+          </a>
         </div>
         
 
@@ -509,29 +511,57 @@ document.querySelector('#app').innerHTML = `
 `
 
 // Beautiful FAQ toggle function with animations
-function toggleFAQ(element) {
+function toggleFAQ(element, event) {
+  // Prevent event bubbling for sub-items
+  if (event && element.classList.contains('sub-item')) {
+    event.stopPropagation();
+  }
+  
   const answer = element.querySelector('.faq-answer');
   const icon = element.querySelector('.faq-icon');
   const svg = icon.querySelector('.faq-svg');
+  const isSubItem = element.classList.contains('sub-item');
   
-  // Close all other FAQ items with animation
-  const allItems = document.querySelectorAll('.faq-item');
-  allItems.forEach(item => {
-    if (item !== element) {
-      const otherAnswer = item.querySelector('.faq-answer');
-      const otherIcon = item.querySelector('.faq-icon');
-      const otherSvg = otherIcon.querySelector('.faq-svg');
-      
-      otherAnswer.style.maxHeight = '0px';
-      otherAnswer.style.opacity = '0';
-      otherSvg.style.transform = 'rotate(0deg)';
-      item.classList.remove('active');
-      
-      setTimeout(() => {
-        otherAnswer.style.display = 'none';
-      }, 300);
-    }
-  });
+  // For sub-items, only close other sub-items within the same parent
+  if (isSubItem) {
+    const parentElement = element.closest('.faq-content');
+    const siblingSubItems = parentElement.querySelectorAll('.faq-item.sub-item');
+    siblingSubItems.forEach(item => {
+      if (item !== element) {
+        const otherAnswer = item.querySelector('.faq-answer');
+        const otherIcon = item.querySelector('.faq-icon');
+        const otherSvg = otherIcon.querySelector('.faq-svg');
+        
+        otherAnswer.style.maxHeight = '0px';
+        otherAnswer.style.opacity = '0';
+        otherSvg.style.transform = 'rotate(0deg)';
+        item.classList.remove('active');
+        
+        setTimeout(() => {
+          otherAnswer.style.display = 'none';
+        }, 300);
+      }
+    });
+  } else {
+    // For main items, close all other main items
+    const allMainItems = document.querySelectorAll('.faq-item:not(.sub-item)');
+    allMainItems.forEach(item => {
+      if (item !== element) {
+        const otherAnswer = item.querySelector('.faq-answer');
+        const otherIcon = item.querySelector('.faq-icon');
+        const otherSvg = otherIcon.querySelector('.faq-svg');
+        
+        otherAnswer.style.maxHeight = '0px';
+        otherAnswer.style.opacity = '0';
+        otherSvg.style.transform = 'rotate(0deg)';
+        item.classList.remove('active');
+        
+        setTimeout(() => {
+          otherAnswer.style.display = 'none';
+        }, 300);
+      }
+    });
+  }
   
   // Toggle current FAQ item with smooth animation
   const isActive = element.classList.contains('active');

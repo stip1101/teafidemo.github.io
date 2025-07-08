@@ -228,7 +228,7 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 6.5vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 32px;
@@ -248,7 +248,7 @@ body {
 }
 
 .hero-subtitle {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
   font-weight: 700;
   margin-bottom: 20px;
   color: var(--text-gray);
@@ -257,7 +257,7 @@ body {
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--text-gray-secondary);
   margin-bottom: 48px;
   font-weight: 500;
@@ -708,10 +708,11 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(-40px);
 }
 
 .logo-showcase:hover {
-  transform: translateY(-15px) scale(1.08);
+  transform: translateY(-55px) scale(1.08);
 }
 
 .hero-logo {
@@ -1218,6 +1219,20 @@ section {
   z-index: 1;
 }
 
+.faq-container.two-column {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.faq-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .faq-item {
   background: var(--gradient-card);
   border: 1px solid rgba(255, 0, 122, 0.2);
@@ -1338,8 +1353,46 @@ section {
   transform: translateY(0);
 }
 
+/* Sub-item styles */
+.faq-item.sub-item {
+  margin-top: 16px;
+  background: rgba(255, 0, 122, 0.05);
+  border-color: rgba(255, 0, 122, 0.15);
+}
+
+.faq-item.sub-item .faq-question {
+  padding: 20px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.faq-item.sub-item .faq-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.faq-item.sub-item .faq-content {
+  padding: 16px 24px;
+}
+
+.faq-item.sub-item .faq-answer p {
+  font-size: 1rem;
+}
+
 /* Responsive FAQ */
+@media (max-width: 1024px) {
+  .faq-container.two-column {
+    gap: 30px;
+  }
+}
+
 @media (max-width: 768px) {
+  .faq-container.two-column {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 800px;
+  }
+  
   .faq-question {
     padding: 20px 24px;
     font-size: 1.1rem;
@@ -1357,10 +1410,20 @@ section {
   .faq-answer p {
     font-size: 1rem;
   }
+  
+  .faq-item.sub-item .faq-question {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+  
+  .faq-item.sub-item .faq-content {
+    padding: 12px 20px;
+  }
 }
 
 @media (max-width: 480px) {
-  .faq-container {
+  .faq-container,
+  .faq-container.two-column {
     gap: 16px;
   }
   
@@ -1376,6 +1439,20 @@ section {
   .faq-icon {
     width: 32px;
     height: 32px;
+  }
+  
+  .faq-item.sub-item .faq-question {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  
+  .faq-item.sub-item .faq-content {
+    padding: 10px 16px;
+  }
+  
+  .faq-item.sub-item .faq-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -1748,6 +1825,22 @@ section {
   box-shadow: 0 10px 40px rgba(255, 0, 122, 0.3);
 }
 
+.dev-contact {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.dev-contact:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
 
 
 /* Animations */
@@ -2079,6 +2172,11 @@ section {
   .footer-tagline {
     font-size: 1rem;
   }
+  
+  .dev-contact {
+    font-size: 0.7rem;
+    margin-top: 14px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2119,6 +2217,11 @@ section {
   .footer-logo {
     width: 50px;
     height: 50px;
+  }
+  
+  .dev-contact {
+    font-size: 0.7rem;
+    margin-top: 12px;
   }
 }
 
@@ -2386,6 +2489,171 @@ section {
   
   .step-arrow {
     margin: 4px 0;
+  }
+}
+
+/* Collaboration Section */
+.collaboration-section {
+  margin-top: 80px;
+  text-align: center;
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.collaboration-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: var(--font-headline);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+.collaboration-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 80px;
+  min-height: 100px;
+}
+
+.collaboration-logo {
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.collaboration-logo:first-child {
+  margin-left: -40px;
+}
+
+.collaboration-logo:last-child {
+  transform: translateX(-95px);
+}
+
+.collaboration-logo:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.collaboration-logo:last-child:hover {
+  transform: translateX(-95px) translateY(-8px) scale(1.05);
+}
+
+.colab-logo {
+  height: 65px;
+  width: auto;
+  filter: drop-shadow(0 4px 20px rgba(255, 0, 122, 0.3));
+  transition: var(--transition);
+}
+
+.solus-logo {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 4px 20px rgba(255, 0, 122, 0.3));
+  transition: var(--transition);
+}
+
+.collaboration-logo:hover .colab-logo {
+  filter: drop-shadow(0 8px 32px rgba(255, 0, 122, 0.5));
+}
+
+.collaboration-logo:hover .solus-logo {
+  filter: drop-shadow(0 8px 32px rgba(255, 0, 122, 0.5));
+}
+
+.collaboration-connector {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connector-text {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--accent-pink);
+  font-family: var(--font-headline);
+  text-shadow: 0 0 20px rgba(255, 0, 122, 0.5);
+}
+
+@media (max-width: 768px) {
+  .collaboration-section {
+    margin-top: 60px;
+  }
+  
+  .collaboration-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .collaboration-logos {
+    max-width: 650px;
+    padding: 0 60px;
+  }
+  
+  .colab-logo {
+    height: 50px;
+  }
+  
+  .solus-logo {
+    height: 60px;
+  }
+  
+  .connector-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .collaboration-section {
+    margin-top: 40px;
+  }
+  
+  .collaboration-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .collaboration-logos {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    height: auto;
+    min-height: auto;
+    padding: 0;
+  }
+  
+  .collaboration-connector {
+    position: static;
+    transform: none;
+    order: 2;
+  }
+  
+  .collaboration-logo:first-child {
+    order: 1;
+  }
+  
+  .collaboration-logo:last-child {
+    order: 3;
+  }
+  
+  .colab-logo {
+    height: 40px;
+  }
+  
+  .solus-logo {
+    height: 50px;
+  }
+  
+  .connector-text {
+    font-size: 2.5rem;
   }
 }
 
