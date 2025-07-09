@@ -9,7 +9,7 @@ document.querySelector('#app').innerHTML = `
         <div class="nav-logo">
           <img src="/whitesvg.svg" alt="TeaFi Logo" class="logo-img" />
         </div>
-        <span class="nav-brand">TeaFi Ambassadors</span>
+        <span class="nav-brand">Tea-Fi Ambassadors</span>
       </div>
       
       <div class="nav-center">
@@ -31,10 +31,10 @@ document.querySelector('#app').innerHTML = `
     <div class="hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
-          Become a <span class="gradient-text">TeaFi Ambassador</span>
+          Become a <span class="gradient-text">Tea-Fi Ambassador</span>
         </h1>
         <h2 class="hero-subtitle">
-          Farm your status. Build your influence. Shape TeaFi.
+          Farm your status. Build your influence. Shape Tea-Fi.
         </h2>
         <p class="hero-description">
           It starts simple. It can go big.
@@ -111,7 +111,7 @@ document.querySelector('#app').innerHTML = `
             </div>
             <div class="flow-content">
               <h3>Start Your Journey</h3>
-              <p>Unlock endless possibilities in TeaFi</p>
+              <p>Unlock endless possibilities in Tea-Fi</p>
             </div>
           </div>
         </div>
@@ -121,8 +121,8 @@ document.querySelector('#app').innerHTML = `
             <div class="task-highlight-badge">FIRST TASK</div>
             <div class="task-highlight-timer">⏱️ Takes 10 minutes</div>
           </div>
-          <h3 class="task-highlight-title">Create a post about TeaFi Web App and making a swap</h3>
-          <p class="task-highlight-description">Share your experience with the community and help others discover TeaFi</p>
+          <h3 class="task-highlight-title">Create a post about Tea-Fi Web App and making a swap</h3>
+          <p class="task-highlight-description">Share your experience with the community and help others discover Tea-Fi</p>
           
           <div class="task-highlight-cta">
             <button class="cta-button-hero" id="getStartedBtn">
@@ -213,7 +213,7 @@ document.querySelector('#app').innerHTML = `
             </div>
           </div>
           <h3>Ambassador</h3>
-          <p>KOLs, public partners, and external network builders. Highly visible extension of TeaFi's external communication.</p>
+          <p>KOLs, public partners, and external network builders. Highly visible extension of Tea-Fi's external communication.</p>
         </div>
       </div>
     </div>
@@ -429,7 +429,7 @@ document.querySelector('#app').innerHTML = `
       <div class="cta-frame">
         <div class="cta-frame-inner">
           <div class="cta-content">
-            <h2 class="section-title">Your <span class="gradient-text">TeaFi Journey</span> Starts Here</h2>
+            <h2 class="section-title">Your <span class="gradient-text">Tea-Fi Journey</span> Starts Here</h2>
             <p class="cta-description">The sooner you start, the higher you can climb.</p>
             
             <div class="cta-actions">
