@@ -72,6 +72,19 @@ document.querySelector('#app').innerHTML = `
     <div class="getting-started-container">
       <div class="getting-started-content">
         <h2 class="getting-started-title">Ready to Start Your Journey?</h2>
+        
+        <div class="rules-notice">
+          <div class="rules-notice-content">
+            <h3>Please carefully review the program participation rules</h3>
+            <a href="https://docs.google.com/document/d/1JJUgcAVJTsg7mG3K8qTYrzF1CrcvyQ5GdVcZ87Tf4pg/edit?usp=sharing" class="rules-link" target="_blank" rel="noopener">
+              Read Program Rules
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
         <p class="getting-started-subtitle">Follow these simple steps to earn your first role</p>
         
         <div class="task-flow-modern">
@@ -332,6 +345,17 @@ document.querySelector('#app').innerHTML = `
              </div>
              <div class="faq-answer">
                <div class="faq-content">
+                 <div class="rules-notice">
+                   <div class="rules-notice-content">
+                     <h3>Please carefully review the program participation rules</h3>
+                     <a href="https://docs.google.com/document/d/1JJUgcAVJTsg7mG3K8qTYrzF1CrcvyQ5GdVcZ87Tf4pg/edit?usp=sharing" class="rules-link" target="_blank" rel="noopener">
+                       Read Program Rules
+                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                         <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                       </svg>
+                     </a>
+                   </div>
+                 </div>
                  <p>No forms, no applications. Simply complete your first contribution to unlock the Tea-OG role - your entry point into the program, gated channels, and future opportunities.</p>
                  <button class="cta-button-enhanced primary" style="margin-top: 16px;" onclick="window.open('https://discord.com/invite/DUVua49zrf', '_blank'); event.stopPropagation();">
                    <span class="cta-button-text">Start Contributing</span>

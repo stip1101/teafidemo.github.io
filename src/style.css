@@ -308,6 +308,62 @@ body {
   font-family: var(--font-headline);
 }
 
+.rules-notice {
+  max-width: 80%;
+  margin: 24px auto 36px auto;
+  padding: 20px 24px;
+  background: rgba(255, 0, 122, 0.08);
+  border: 1px solid rgba(255, 0, 122, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.rules-notice:hover {
+  background: rgba(255, 0, 122, 0.1);
+  border-color: rgba(255, 0, 122, 0.3);
+  transform: translateY(-1px);
+}
+
+.rules-notice-content h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 12px;
+  font-family: var(--font-headline);
+}
+
+.rules-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-pink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 0, 122, 0.1);
+  border: 1px solid rgba(255, 0, 122, 0.2);
+  transition: all 0.2s ease;
+}
+
+.rules-link:hover {
+  color: var(--text-white);
+  background: var(--accent-pink);
+  border-color: var(--accent-pink);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 0, 122, 0.3);
+}
+
+.rules-link svg {
+  transition: transform 0.2s ease;
+}
+
+.rules-link:hover svg {
+  transform: translateX(2px);
+}
+
 .getting-started-subtitle {
   font-size: 1.25rem;
   color: var(--text-gray);
