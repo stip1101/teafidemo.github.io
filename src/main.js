@@ -157,7 +157,7 @@ document.querySelector('#app').innerHTML = `
       <div class="progression-track">
         <div class="role-card modern" data-role="tea-og">
           <div class="role-icon-modern">
-            <img src="/tea-bag-tea.svg" alt="Tea-OG" style="width: 48px; height: 48px;" />
+            <img src="/tea-og.webp" alt="Tea-OG" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea-OG</h3>
           <p>Entry role for anyone who makes the first public contribution. The first step into the ecosystem.</p>
@@ -171,7 +171,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-fan">
           <div class="role-icon-modern">
-            <img src="/tea-svg.svg" alt="Tea Fan" style="width: 48px; height: 48px;" />
+            <img src="/tea-fan.webp" alt="Tea Fan" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea Fan</h3>
           <p>Active contributor in content creation, community support and feedback activities.</p>
@@ -185,7 +185,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-enjoyer">
           <div class="role-icon-modern">
-            <img src="/tea-cup-coffee.svg" alt="Tea Enjoyer" style="width: 48px; height: 48px;" />
+            <img src="/tea-enjoyer.webp" alt="Tea Enjoyer" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea Enjoyer</h3>
           <p>Deeper involvement in events, organizational activities and community building.</p>
@@ -199,7 +199,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="role-card modern" data-role="tea-chad">
           <div class="role-icon-modern">
-            <img src="/tea-pot.svg" alt="Tea Chad" style="width: 48px; height: 48px;" />
+            <img src="/tea-chad.webp" alt="Tea Chad" style="width: 48px; height: 48px;" />
           </div>
           <h3>Tea Chad</h3>
           <p>Community leaders who shape culture, attract members and guide product direction.</p>
@@ -209,21 +209,7 @@ document.querySelector('#app').innerHTML = `
       <div class="ambassador-track">
                   <div class="ambassador-card modern">
           <div class="role-icon-modern special">
-            <div style="position: relative; width: 48px; height: 48px;">
-              <img src="/teaamb.svg" alt="Ambassador" style="width: 48px; height: 48px;" />
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="position: absolute; top: -12px; left: 14px;">
-                <defs>
-                  <linearGradient id="crownGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <path d="M5 16L3 6L7.5 10L12 4L16.5 10L21 6L19 16H5Z" stroke="#FFD700" stroke-width="1.5" fill="url(#crownGradient)"/>
-                <path d="M12 2L13.09 6.26L17 7L13.09 7.74L12 12L10.91 7.74L7 7L10.91 6.26L12 2Z" fill="#FFD700"/>
-                <circle cx="8" cy="12" r="0.8" fill="#FFD700"/>
-                <circle cx="16" cy="12" r="0.8" fill="#FFD700"/>
-              </svg>
-            </div>
+            <img src="/ambassador.webp" alt="Ambassador" style="width: 48px; height: 48px;" />
           </div>
           <h3>Ambassador</h3>
           <p>KOLs, public partners, and external network builders. Highly visible extension of Tea-Fi's external communication.</p>

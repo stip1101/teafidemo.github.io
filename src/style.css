@@ -2381,8 +2381,7 @@ section {
 }
 
 .role-icon-modern img {
-  filter: brightness(0) invert(1);
-  font-weight: bold;
+  /* Removed filter to show original webp colors */
 }
 
 .role-card.modern[data-role="tea-enjoyer"] .role-icon-modern img {
@@ -2497,8 +2496,7 @@ section {
 }
 
 .contributor-icon-modern img {
-  filter: brightness(0) invert(1);
-  font-weight: bold;
+  /* Removed filter to show original icon colors */
 }
 
 /* Стили для текста в modern contributor карточках */
