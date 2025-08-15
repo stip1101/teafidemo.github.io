@@ -364,6 +364,125 @@ body {
   transform: translateX(2px);
 }
 
+.rules-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-guide-link {
+  margin: 12px 0;
+  text-align: center;
+}
+
+.brand-guide-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-pink);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255, 0, 122, 0.08);
+  border: 1px solid rgba(255, 0, 122, 0.15);
+  transition: all 0.2s ease;
+}
+
+.brand-guide-link a:hover {
+  color: var(--text-white);
+  background: rgba(255, 0, 122, 0.15);
+  border-color: rgba(255, 0, 122, 0.25);
+  transform: translateY(-1px);
+}
+
+.brand-guide-notice {
+  max-width: 85%;
+  margin: 40px auto;
+  padding: 32px 28px;
+  background: linear-gradient(135deg, rgba(255, 0, 122, 0.12) 0%, rgba(44, 15, 38, 0.4) 100%);
+  border: 2px solid rgba(255, 0, 122, 0.25);
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.brand-guide-notice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-pink), transparent);
+  animation: slideIn 3s infinite;
+}
+
+@keyframes slideIn {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: -100%; }
+}
+
+.brand-guide-notice:hover {
+  border-color: rgba(255, 0, 122, 0.4);
+  background: linear-gradient(135deg, rgba(255, 0, 122, 0.15) 0%, rgba(44, 15, 38, 0.5) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 0, 122, 0.2);
+}
+
+.brand-guide-notice-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 12px;
+  font-family: var(--font-headline);
+}
+
+.brand-guide-notice-content p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.brand-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-white);
+  background: var(--accent-pink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 2px solid var(--accent-pink);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 0, 122, 0.3);
+}
+
+.brand-guide-btn:hover {
+  background: transparent;
+  color: var(--accent-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 122, 0.4);
+}
+
+.brand-guide-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.brand-guide-btn:hover svg {
+  transform: translateX(4px) translateY(-2px);
+}
+
+
 .getting-started-subtitle {
   font-size: 1.25rem;
   color: var(--text-gray);

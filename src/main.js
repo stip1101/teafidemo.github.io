@@ -137,6 +137,15 @@ document.querySelector('#app').innerHTML = `
           <h3 class="task-highlight-title">Create a post about Tea-Fi Web App and making a swap</h3>
           <p class="task-highlight-description">Share your experience with the community and help others discover Tea-Fi</p>
           
+          <div class="brand-guide-link">
+            <a href="https://drive.google.com/drive/folders/1yeiiS8_3-fZr5knD9egqCZE-QdQDNQpe" target="_blank" rel="noopener">
+              Use our Brand Guide for content creation
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+          
           <div class="task-highlight-cta">
             <button class="cta-button-hero" id="getStartedBtn">
               <span>Get Your First Role Now</span>
@@ -224,6 +233,19 @@ document.querySelector('#app').innerHTML = `
   <section class="contributor-check">
     <div class="container">
       <h2 class="section-title">Are You <span class="gradient-text">Contributor Material?</span></h2>
+      
+      <div class="brand-guide-notice">
+        <div class="brand-guide-notice-content">
+          <h3>Use our Brand Guide to create professional content</h3>
+          <p>Access logos, colors, fonts for consistent Tea-Fi branding</p>
+          <a href="https://drive.google.com/drive/folders/1yeiiS8_3-fZr5knD9egqCZE-QdQDNQpe" class="brand-guide-btn" target="_blank" rel="noopener">
+            Access Brand Guide
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
       
       <div class="contributor-types">
         <div class="contributor-card modern">
