@@ -17,6 +17,7 @@ document.querySelector('#app').innerHTML = `
           <a href="#roles" class="nav-link">Roles</a>
           <a href="#progression" class="nav-link">Progression</a>
           <a href="#faq" class="nav-link">FAQ</a>
+          <a href="stats.html" class="nav-link">Stats</a>
         </div>
       </div>
       
