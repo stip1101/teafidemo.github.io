@@ -2850,11 +2850,47 @@ section {
 
 /* Stats Page Styles */
 .stats-hero {
-  min-height: 70vh;
+  min-height: 30vh;
+  padding-bottom: 20px;
+}
+
+.stats-hero .hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.stats-hero .hero-content {
+  text-align: left;
+  max-width: none;
+  margin: 0;
+  padding: 60px 24px;
 }
 
 .stats-hero .hero-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.stats-hero .hero-subtitle {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text-gray);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.stats-hero .hero-description {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-gray-secondary);
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
 }
 
 .stats-visual {
@@ -2862,6 +2898,20 @@ section {
   align-items: center;
   justify-content: center;
   height: 300px;
+  position: relative;
+}
+
+.stats-visual .hero-logo {
+  width: 380px;
+  height: 380px;
+  filter: drop-shadow(0 0 30px rgba(255, 0, 122, 0.4)) drop-shadow(0 0 60px rgba(255, 0, 122, 0.2));
+  animation: logo-float 6s ease-in-out infinite;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stats-visual .hero-logo:hover {
+  filter: drop-shadow(0 0 40px rgba(255, 0, 122, 0.6)) drop-shadow(0 0 80px rgba(255, 0, 122, 0.3));
+  transform: scale(1.05) rotate(-2deg);
 }
 
 .loading-spinner {
@@ -2918,21 +2968,6 @@ section {
   overflow: hidden;
 }
 
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-text);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.stat-card:hover::before {
-  opacity: 1;
-}
 
 .stat-card:hover {
   transform: translateY(-8px) scale(1.02);
@@ -3060,21 +3095,6 @@ section {
   overflow: hidden;
 }
 
-.member-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-text);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.member-card:hover::before {
-  opacity: 1;
-}
 
 .member-card:hover {
   transform: translateY(-5px);

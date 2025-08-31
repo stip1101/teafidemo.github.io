@@ -650,10 +650,11 @@ function initInteractivity() {
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const href = link.getAttribute('href');
       
+      // Only prevent default for anchor links, allow normal navigation for external pages
       if (href.startsWith('#')) {
+        e.preventDefault();
         const targetId = href.substring(1);
         let targetElement;
         
@@ -682,6 +683,7 @@ function initInteractivity() {
           });
         }
       }
+      // For non-anchor links (like stats.html), allow normal navigation
     });
   });
 

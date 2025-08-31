@@ -230,9 +230,24 @@ async function initStatsPage() {
         
         <div class="hero-visual">
           <div class="stats-visual">
-            <div class="loading-spinner">
-              <div class="spinner"></div>
-              <p>Loading community stats...</p>
+            <div class="logo-showcase">
+              <img src="/ambassador.webp" alt="Tea Ambassador" class="hero-logo" />
+              <div class="logo-glow"></div>
+              <div class="logo-particles">
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+                <div class="particle particle-4"></div>
+                <div class="particle particle-5"></div>
+                <div class="particle particle-6"></div>
+              </div>
+              <div class="floating-minimal">
+                <div class="float-dot dot-1"></div>
+                <div class="float-dot dot-2"></div>
+                <div class="float-dot dot-3"></div>
+                <div class="float-line line-1"></div>
+                <div class="float-line line-2"></div>
+              </div>
             </div>
           </div>
         </div>
