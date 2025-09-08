@@ -72,63 +72,54 @@ document.querySelector('#app').innerHTML = `
   <section class="getting-started">
     <div class="getting-started-container">
       <div class="getting-started-content">
+        <h2 class="section-title">Program <span class="gradient-text">Stats</span></h2>
+        
+        <!-- Statistics Plaque -->
+        <div class="main-stats-plaque">
+          <div class="main-stats-content">
+            <div class="main-stat-item">
+              <div class="main-stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="main-stat-info">
+                <h3 class="main-stat-number">76</h3>
+                <p class="main-stat-label">Total Participants</p>
+              </div>
+            </div>
+            
+            <div class="main-stat-divider"></div>
+            
+            <div class="main-stat-item">
+              <div class="main-stat-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <div class="main-stat-info">
+                <h3 class="main-stat-number">1,838</h3>
+                <p class="main-stat-label">Total Contributions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sugar Cubes Special Card -->
+        <div class="main-sugar-cubes-card">
+          <div class="main-sugar-cubes-content">
+            <div class="main-sugar-cubes-icon">
+              <i class="fas fa-cube"></i>
+            </div>
+            <div class="main-sugar-cubes-info">
+              <h3 class="main-sugar-cubes-number">150,750</h3>
+              <p class="main-sugar-cubes-label">Total Sugar Cubes Earned</p>
+            </div>
+            <div class="main-sugar-cubes-decoration">
+              <div class="main-cube-particle main-cube-1"></div>
+              <div class="main-cube-particle main-cube-2"></div>
+              <div class="main-cube-particle main-cube-3"></div>
+            </div>
+          </div>
+        </div>
+        
         <h2 class="getting-started-title">Ready to Start Your Journey?</h2>
-        
-        <div class="rules-notice">
-          <div class="rules-notice-content">
-            <h3>Please carefully review the program participation rules</h3>
-            <a href="https://docs.google.com/document/d/1JJUgcAVJTsg7mG3K8qTYrzF1CrcvyQ5GdVcZ87Tf4pg/edit?usp=sharing" class="rules-link" target="_blank" rel="noopener">
-              Read Program Rules
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <p class="getting-started-subtitle">Follow these simple steps to earn your first role</p>
-        
-        <div class="task-flow-modern">
-          <div class="flow-step">
-            <div class="flow-number">1</div>
-            <div class="flow-content">
-              <h3>Complete 1 Simple Task</h3>
-              <p>Make your first contribution to the community</p>
-            </div>
-          </div>
-          
-          <div class="flow-arrow">
-            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-              <path d="M28 4L36 12L28 20M36 12H4" stroke="#FF007A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          
-          <div class="flow-step">
-            <div class="flow-badge">Tea-OG</div>
-            <div class="flow-content">
-              <h3>Get Your Tea-OG Role</h3>
-              <p>Become an official community member</p>
-            </div>
-          </div>
-          
-          <div class="flow-arrow">
-            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-              <path d="M28 4L36 12L28 20M36 12H4" stroke="#FF007A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          
-          <div class="flow-step">
-            <div class="flow-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#FF007A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(255, 0, 122, 0.1)"/>
-              </svg>
-            </div>
-            <div class="flow-content">
-              <h3>Start Your Journey</h3>
-              <p>Unlock endless possibilities in Tea-Fi</p>
-            </div>
-          </div>
-        </div>
         
         <div class="first-task-highlight">
           <div class="task-highlight-header">
@@ -154,6 +145,61 @@ document.querySelector('#app').innerHTML = `
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
+          </div>
+        </div>
+        
+        <div class="steps-plaque">
+          <div class="steps-plaque-content">
+            <div class="steps-plaque-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="steps-plaque-text">
+              <h3>Follow these simple steps to earn your first role</h3>
+            </div>
+          </div>
+        </div>
+        
+        <div class="task-flow-modern">
+          <div class="flow-step">
+            <div class="flow-number">1</div>
+            <div class="flow-content">
+              <h3>Complete 1 Simple Task</h3>
+              <p>Create a post about Tea-Fi Web App and making a swap</p>
+            </div>
+          </div>
+          
+          <div class="flow-arrow">
+            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+              <path d="M28 4L36 12L28 20M36 12H4" stroke="#FF007A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          
+          <div class="flow-step" onclick="window.open('https://discord.gg/DC6dz5ZapU', '_blank')" style="cursor: pointer;">
+            <div class="flow-badge">Tea-OG</div>
+            <div class="flow-content">
+              <h3>Get Your Tea-OG Role</h3>
+              <p>Become an official community member</p>
+            </div>
+          </div>
+          
+          <div class="flow-arrow">
+            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+              <path d="M28 4L36 12L28 20M36 12H4" stroke="#FF007A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#FF007A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(255, 0, 122, 0.1)"/>
+              </svg>
+            </div>
+            <div class="flow-content">
+              <h3>Start Your Journey</h3>
+              <p>Unlock endless possibilities in Tea-Fi</p>
+            </div>
           </div>
         </div>
       </div>
@@ -217,7 +263,16 @@ document.querySelector('#app').innerHTML = `
       </div>
       
       <div class="ambassador-track">
-                  <div class="ambassador-card modern">
+        <div class="ambassador-card modern">
+          <div class="role-icon-modern special">
+            <img src="/trainee.webp" alt="Trainee" style="width: 48px; height: 48px;" />
+          </div>
+          <h3>Trainee</h3>
+          <p>Available to creators and influencers with 5000+ audience. Perfect entry point for content creators who want to grow with Tea-Fi.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSetOpT35aFvFX5a6iBseEGTwraiqWUrTMxD9a3iccAM8pN6zQ/viewform" target="_blank" class="trainee-form-link">Apply via Form</a>
+        </div>
+        
+        <div class="ambassador-card modern">
           <div class="role-icon-modern special">
             <img src="/ambassador.webp" alt="Ambassador" style="width: 48px; height: 48px;" />
           </div>
@@ -227,8 +282,6 @@ document.querySelector('#app').innerHTML = `
       </div>
     </div>
   </section>
-
-
 
   <!-- Contributor Check Section -->
   <section class="contributor-check">
@@ -295,6 +348,23 @@ document.querySelector('#app').innerHTML = `
           </div>
           <h3>Community Members</h3>
           <p>Generating daily engagement and fostering meaningful discussions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Rules Section -->
+  <section class="program-rules">
+    <div class="container">
+      <div class="rules-notice">
+        <div class="rules-notice-content">
+          <h3>Please carefully review the program participation rules</h3>
+          <a href="https://docs.google.com/document/d/1JJUgcAVJTsg7mG3K8qTYrzF1CrcvyQ5GdVcZ87Tf4pg/edit?usp=sharing" class="rules-link" target="_blank" rel="noopener">
+            Read Program Rules
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>

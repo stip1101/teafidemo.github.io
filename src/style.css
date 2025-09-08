@@ -269,7 +269,7 @@ body {
   background: 
     radial-gradient(circle at 20% 50%, rgba(255, 0, 122, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 80% 50%, rgba(44, 15, 38, 0.15) 0%, transparent 50%);
-  padding: 100px 0;
+  padding: 150px 0 80px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1168,6 +1168,7 @@ section {
 .progression {
   background: rgba(44, 15, 38, 0.1);
   backdrop-filter: blur(10px);
+  padding: 80px 0 250px 0;
 }
 
 .progression-track {
@@ -1279,16 +1280,18 @@ section {
 .ambassador-track {
   display: flex;
   justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
 }
 
 .ambassador-card {
   background: var(--gradient-card);
   border: 2px solid var(--accent-pink);
   border-radius: var(--border-radius-lg);
-  padding: 32px 24px;
+  padding: 28px 22px;
   text-align: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
   height: 320px;
   position: relative;
   backdrop-filter: blur(10px);
@@ -2083,6 +2086,21 @@ section {
     height: 400px;
     padding-top: 60px;
   }
+
+  .progression {
+    padding: 60px 0 180px 0;
+  }
+
+  .ambassador-track {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ambassador-card, .ambassador-card.modern {
+    max-width: 400px;
+    height: 280px;
+    padding: 24px 20px;
+  }
   
   .progression-track {
     flex-wrap: wrap;
@@ -2151,7 +2169,7 @@ section {
   }
   
   .getting-started {
-    padding: 80px 0;
+    padding: 120px 0 60px 0;
   }
   
   .getting-started-container {
@@ -2194,6 +2212,21 @@ section {
   
   .container {
     padding: 0 20px;
+  }
+
+  .progression {
+    padding: 50px 0 120px 0;
+  }
+
+  .ambassador-track {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ambassador-card, .ambassador-card.modern {
+    max-width: 100%;
+    height: 240px;
+    padding: 20px 16px;
   }
   
   .progression-track {
@@ -2278,7 +2311,7 @@ section {
   }
   
   .getting-started {
-    padding: 60px 0;
+    padding: 80px 0 50px 0;
   }
   
   .getting-started-container {
@@ -2543,10 +2576,10 @@ section {
   background: var(--gradient-card);
   border: 2px solid var(--accent-pink);
   border-radius: var(--border-radius-lg);
-  padding: 32px 24px;
+  padding: 28px 22px;
   text-align: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
   height: 320px;
   position: relative;
   backdrop-filter: blur(10px);
@@ -2576,6 +2609,27 @@ section {
 .ambassador-card.modern:hover .role-icon-modern {
   transform: scale(1.3) rotate(15deg);
   box-shadow: 0 15px 40px rgba(255, 0, 122, 0.5);
+}
+
+.trainee-form-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #FF007A 0%, #E6006E 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.trainee-form-link:hover {
+  background: transparent;
+  border-color: #FF007A;
+  color: #FF007A;
+  transform: translateY(-2px);
 }
 
 .contributor-card.modern {
@@ -3921,5 +3975,414 @@ section {
 
   .role-distribution-title {
     font-size: 1.9rem !important;
+  }
+}
+
+
+/* Main Page Statistics Plaque */
+.main-stats-plaque {
+  margin: 32px auto;
+  max-width: 600px;
+}
+
+.main-stats-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px 32px;
+  background: var(--gradient-card);
+  border: 1px solid rgba(255, 0, 122, 0.2);
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.main-stats-content:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 0, 122, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 0, 122, 0.2);
+}
+
+.main-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.main-stat-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-pink) 0%, #E6006E 100%);
+  border-radius: var(--border-radius);
+  color: white;
+  flex-shrink: 0;
+}
+
+.main-stat-icon i {
+  font-size: 1.5rem;
+}
+
+.main-stat-info {
+  text-align: left;
+}
+
+.main-stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 4px 0;
+  line-height: 1;
+  font-family: var(--font-primary);
+}
+
+.main-stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.main-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 0, 122, 0.3), transparent);
+}
+
+/* Steps Plaque */
+.steps-plaque {
+  margin: 40px auto 32px auto;
+  max-width: 600px;
+}
+
+.steps-plaque-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, rgba(255, 0, 122, 0.15) 0%, rgba(44, 15, 38, 0.2) 100%);
+  border: 1px solid rgba(255, 0, 122, 0.3);
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.steps-plaque-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 122, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.steps-plaque-content:hover::before {
+  left: 100%;
+}
+
+.steps-plaque-content:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 0, 122, 0.5);
+  box-shadow: 0 12px 40px rgba(255, 0, 122, 0.2);
+}
+
+.steps-plaque-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FF007A 0%, #E6006E 100%);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(255, 0, 122, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.steps-plaque-content:hover .steps-plaque-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.steps-plaque-icon svg {
+  stroke: white;
+  fill: none;
+}
+
+.steps-plaque-text h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+/* Main Page Sugar Cubes Card */
+.main-sugar-cubes-card {
+  margin: 24px auto 120px auto;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-sugar-cubes-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 32px;
+  background: linear-gradient(135deg, #FF007A 0%, #E6006E 100%);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 12px 30px rgba(255, 0, 122, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.main-sugar-cubes-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(255, 0, 122, 0.5);
+}
+
+.main-sugar-cubes-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.main-sugar-cubes-icon i {
+  font-size: 1.8rem;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.main-sugar-cubes-info {
+  flex-grow: 1;
+}
+
+.main-sugar-cubes-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 4px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+  font-family: var(--font-primary);
+}
+
+.main-sugar-cubes-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main-sugar-cubes-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.main-cube-particle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  animation: floatMainCube 3s ease-in-out infinite;
+}
+
+.main-cube-1 {
+  top: 20%;
+  right: 15px;
+  animation-delay: 0s;
+}
+
+.main-cube-2 {
+  top: 50%;
+  right: 25px;
+  animation-delay: 1s;
+  transform: scale(0.8);
+}
+
+.main-cube-3 {
+  top: 70%;
+  right: 12px;
+  animation-delay: 2s;
+  transform: scale(0.6);
+}
+
+@keyframes floatMainCube {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateY(-8px) rotate(45deg); 
+    opacity: 1;
+  }
+}
+
+/* Program Rules Section */
+.program-rules {
+  padding: 60px 0;
+  background: var(--gradient-bg);
+}
+
+.program-rules .rules-notice {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive Design for Main Page Elements */
+@media (max-width: 768px) {
+  .main-stats-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .main-stat-item {
+    gap: 12px;
+  }
+
+  .main-stat-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main-stat-icon i {
+    font-size: 1.2rem;
+  }
+
+  .main-stat-number {
+    font-size: 1.6rem;
+  }
+
+  .main-stat-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 0, 122, 0.3), transparent);
+  }
+
+  .main-sugar-cubes-card {
+    margin: 20px auto 100px auto;
+  }
+
+  .main-sugar-cubes-content {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .main-sugar-cubes-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main-sugar-cubes-icon i {
+    font-size: 1.5rem;
+  }
+
+  .main-sugar-cubes-number {
+    font-size: 1.8rem;
+  }
+
+  .main-sugar-cubes-label {
+    font-size: 0.9rem;
+  }
+
+  .steps-plaque {
+    margin: 32px auto 24px auto;
+  }
+
+  .steps-plaque-content {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .steps-plaque-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .steps-plaque-text h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-stats-plaque {
+    margin: 24px auto;
+  }
+
+  .main-stats-content {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .main-stat-number {
+    font-size: 1.4rem;
+  }
+
+  .main-stat-label {
+    font-size: 0.8rem;
+  }
+
+  .main-sugar-cubes-card {
+    margin: 20px auto 80px auto;
+  }
+
+  .main-sugar-cubes-content {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .main-sugar-cubes-number {
+    font-size: 1.6rem;
+  }
+
+  .main-sugar-cubes-decoration {
+    display: none;
+  }
+
+  .steps-plaque {
+    margin: 24px auto 20px auto;
+  }
+
+  .steps-plaque-content {
+    padding: 14px 18px;
+    gap: 10px;
+  }
+
+  .steps-plaque-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .steps-plaque-text h3 {
+    font-size: 1rem;
+    line-height: 1.3;
   }
 }
