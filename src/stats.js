@@ -8,6 +8,11 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 минут
 let statsCache = null;
 let cacheTimestamp = null;
 
+// Пагинация
+let isShowingAll = false;
+let currentPage = 1;
+const MEMBERS_PER_PAGE = 20;
+
 // Функция для получения статистики Discord
 async function fetchDiscordStats() {
   // Проверяем кеш
@@ -86,29 +91,176 @@ function getRoleColor(role) {
   return colors[role] || '#FF007A';
 }
 
-// Функция для рендеринга участников
+// Функция для получения приоритета роли (чем выше число, тем выше роль)
+function getRolePriority(role) {
+  const priorities = {
+    'Tea-OG': 1,      // Базовая роль
+    'Tea Fan': 2,
+    'Tea Enjoyer': 3,
+    'Tea Chad': 4,
+    'Ambassador': 5   // Высшая роль
+  };
+  return priorities[role] || 0;
+}
+
+// Функция для получения высшей роли участника
+function getHighestRole(roles) {
+  if (!roles || roles.length === 0) return null;
+  
+  return roles.reduce((highest, current) => {
+    return getRolePriority(current) > getRolePriority(highest) ? current : highest;
+  });
+}
+
+// Функция для показа всех участников с пагинацией
+function showAllMembers() {
+  isShowingAll = true;
+  currentPage = 1;
+  
+  const membersContainer = document.querySelector('.members-container');
+  if (membersContainer && statsCache?.roleMembers) {
+    membersContainer.innerHTML = renderMembers(statsCache.roleMembers);
+  }
+}
+
+// Функция для смены страницы
+function changePage(page) {
+  currentPage = page;
+  
+  const membersContainer = document.querySelector('.members-container');
+  if (membersContainer && statsCache?.roleMembers) {
+    membersContainer.innerHTML = renderMembers(statsCache.roleMembers);
+  }
+}
+
+// Функция для рендеринга участников с поддержкой пагинации
 function renderMembers(members) {
   if (!members || members.length === 0) {
     return '<div class="no-data">No members data available</div>';
   }
 
-  return members.map(member => `
-    <div class="member-card modern">
-      <div class="member-avatar">
-        <img src="${member.avatarURL}" alt="${member.displayName}" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
-      </div>
-      <div class="member-info">
-        <h3 class="member-name">${member.displayName}</h3>
-        <p class="member-username">@${member.username}</p>
-        <div class="member-roles">
-          ${member.roles.map(role => `
-            <span class="role-badge" style="background-color: ${getRoleColor(role)}20; border-color: ${getRoleColor(role)}50; color: ${getRoleColor(role)}">${role}</span>
-          `).join('')}
+  // Сортируем участников по высшей роли (по убыванию приоритета)
+  const sortedMembers = [...members].sort((a, b) => {
+    const aHighestRole = getHighestRole(a.roles);
+    const bHighestRole = getHighestRole(b.roles);
+    const aPriority = getRolePriority(aHighestRole);
+    const bPriority = getRolePriority(bHighestRole);
+    
+    // Если приоритеты ролей равны, сортируем по дате присоединения (раньше = выше в рейтинге)
+    if (aPriority === bPriority) {
+      return new Date(a.joinedAt) - new Date(b.joinedAt);
+    }
+    
+    return bPriority - aPriority;
+  });
+
+  let displayMembers;
+  let showPagination = false;
+  
+  if (isShowingAll) {
+    // Показываем с пагинацией
+    const startIndex = (currentPage - 1) * MEMBERS_PER_PAGE;
+    const endIndex = startIndex + MEMBERS_PER_PAGE;
+    displayMembers = sortedMembers.slice(startIndex, endIndex);
+    showPagination = sortedMembers.length > MEMBERS_PER_PAGE;
+  } else {
+    // Показываем только топ-10
+    displayMembers = sortedMembers.slice(0, 10);
+  }
+
+  const renderMembersList = () => {
+    return displayMembers.map((member, index) => {
+      const position = isShowingAll ? (currentPage - 1) * MEMBERS_PER_PAGE + index + 1 : index + 1;
+      const highestRole = getHighestRole(member.roles);
+      
+      return `
+        <div class="ranking-item" data-position="${position}">
+          <div class="ranking-position">
+            <span class="position-number">#${position}</span>
+          </div>
+          
+          <div class="ranking-avatar">
+            <img src="${member.avatarURL}" alt="${member.displayName}" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
+            <div class="avatar-border" style="border-color: ${getRoleColor(highestRole)}"></div>
+          </div>
+          
+          <div class="ranking-info">
+            <div class="ranking-main">
+              <h3 class="ranking-name">${member.displayName}</h3>
+              <p class="ranking-username">@${member.username}</p>
+            </div>
+            
+            <div class="ranking-roles">
+              ${member.roles
+                .sort((a, b) => getRolePriority(b) - getRolePriority(a)) // Сортируем роли по приоритету
+                .map(role => `
+                  <span class="role-badge ${role === highestRole ? 'highest-role' : ''}" 
+                        style="background-color: ${getRoleColor(role)}20; border-color: ${getRoleColor(role)}50; color: ${getRoleColor(role)}">
+                    ${role}
+                  </span>
+                `).join('')}
+            </div>
+          </div>
+          
+          <div class="ranking-stats">
+            <span class="join-date">Joined ${formatDate(member.joinedAt)}</span>
+          </div>
         </div>
-        <p class="member-joined">Joined: ${formatDate(member.joinedAt)}</p>
-      </div>
+      `;
+    }).join('');
+  };
+
+  const renderPagination = () => {
+    if (!showPagination) return '';
+    
+    const totalPages = Math.ceil(sortedMembers.length / MEMBERS_PER_PAGE);
+    let paginationHTML = '<div class="pagination">';
+    
+    // Previous button
+    if (currentPage > 1) {
+      paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage - 1})">
+        <i class="fas fa-chevron-left"></i>
+      </button>`;
+    }
+    
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === currentPage) {
+        paginationHTML += `<button class="pagination-btn active">${i}</button>`;
+      } else if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+        paginationHTML += `<button class="pagination-btn" onclick="changePage(${i})">${i}</button>`;
+      } else if (i === currentPage - 2 || i === currentPage + 2) {
+        paginationHTML += `<span class="pagination-dots">...</span>`;
+      }
+    }
+    
+    // Next button
+    if (currentPage < totalPages) {
+      paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage + 1})">
+        <i class="fas fa-chevron-right"></i>
+      </button>`;
+    }
+    
+    paginationHTML += '</div>';
+    return paginationHTML;
+  };
+
+  const showAllButton = !isShowingAll && sortedMembers.length > 10 ? `
+    <div class="show-all-container">
+      <button class="show-all-btn" onclick="showAllMembers()">
+        <i class="fas fa-users"></i>
+        Show All Members (${sortedMembers.length})
+      </button>
     </div>
-  `).join('');
+  ` : '';
+
+  return `
+    <div class="ranking-list">
+      ${renderMembersList()}
+    </div>
+    ${showAllButton}
+    ${renderPagination()}
+  `;
 }
 
 // Функция для рендеринга статистики
@@ -124,6 +276,15 @@ function renderStats(stats) {
     });
   }
 
+  // Подсчет участников с ролью Ambassador
+  const ambassadorCount = stats.roleMembers ? stats.roleMembers.filter(member => 
+    member.roles && member.roles.includes('Ambassador')).length : 0;
+
+  // Сортируем роли по приоритету (по убыванию: Ambassador первый)
+  const sortedRoleStats = Object.entries(roleStats).sort(([roleA], [roleB]) => {
+    return getRolePriority(roleB) - getRolePriority(roleA);
+  });
+
   return `
     <div class="stats-grid">
       <div class="stat-card modern">
@@ -132,17 +293,17 @@ function renderStats(stats) {
         </div>
         <div class="stat-content">
           <h3 class="stat-number">${stats.roleMembers?.length || 0}</h3>
-          <p class="stat-label">Total Members</p>
+          <p class="stat-label">Total Participants</p>
         </div>
       </div>
       
       <div class="stat-card modern">
         <div class="stat-icon">
-          <i class="fas fa-messages"></i>
+          <i class="fas fa-hands-helping"></i>
         </div>
         <div class="stat-content">
           <h3 class="stat-number">${stats.channelStats?.messageCount || 0}</h3>
-          <p class="stat-label">Channel Messages</p>
+          <p class="stat-label">Total Contributions</p>
         </div>
       </div>
       
@@ -155,22 +316,30 @@ function renderStats(stats) {
           <p class="stat-label">Days Running</p>
         </div>
       </div>
-      
-      <div class="stat-card modern">
-        <div class="stat-icon">
-          <i class="fas fa-crown"></i>
+    </div>
+
+    <!-- Sugar Cubes Special Card -->
+    <div class="sugar-cubes-card">
+      <div class="sugar-cubes-content">
+        <div class="sugar-cubes-icon">
+          <i class="fas fa-cube"></i>
         </div>
-        <div class="stat-content">
-          <h3 class="stat-number">${Object.keys(roleStats).length}</h3>
-          <p class="stat-label">Active Roles</p>
+        <div class="sugar-cubes-info">
+          <h3 class="sugar-cubes-number">150,750</h3>
+          <p class="sugar-cubes-label">Total Sugar Cubes Earned</p>
+        </div>
+        <div class="sugar-cubes-decoration">
+          <div class="cube-particle cube-1"></div>
+          <div class="cube-particle cube-2"></div>
+          <div class="cube-particle cube-3"></div>
         </div>
       </div>
     </div>
 
     <div class="role-distribution">
-      <h3 class="section-subtitle">Role Distribution</h3>
+      <h3 class="section-subtitle role-distribution-title"><span class="role-red">Role</span> <span class="distribution-white">Distribution</span></h3>
       <div class="role-stats-grid">
-        ${Object.entries(roleStats).map(([role, count]) => `
+        ${sortedRoleStats.map(([role, count]) => `
           <div class="role-stat-card">
             <div class="role-stat-header">
               <span class="role-badge" style="background-color: ${getRoleColor(role)}20; border-color: ${getRoleColor(role)}50; color: ${getRoleColor(role)}">${role}</span>
@@ -196,7 +365,7 @@ async function initStatsPage() {
           <div class="nav-logo">
             <img src="/whitesvg.svg" alt="TeaFi Logo" class="logo-img" />
           </div>
-          <span class="nav-brand">Tea-Fi Community Stats</span>
+          <span class="nav-brand">Tea-Fi Ambassador Community Stats</span>
         </div>
         
         <div class="nav-center">
@@ -218,10 +387,10 @@ async function initStatsPage() {
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title">
-            Tea-Fi <span class="gradient-text">Community Stats</span>
+            Tea-Fi <span class="gradient-text">Ambassador Community Stats</span>
           </h1>
           <h2 class="hero-subtitle">
-            Real-time Discord community statistics and member insights
+            Real-time Ambassador community statistics and member insights
           </h2>
           <p class="hero-description">
             Track our growing community of Tea-Fi ambassadors and contributors
@@ -270,7 +439,7 @@ async function initStatsPage() {
     <!-- Members Section -->
     <section class="members-section" id="members">
       <div class="container">
-        <h2 class="section-title">Our <span class="gradient-text">Members</span></h2>
+        <h2 class="section-title">Top <span class="gradient-text">Members</span></h2>
         <div class="members-container">
           <div class="loading-spinner">
             <div class="spinner"></div>
@@ -360,11 +529,7 @@ async function initStatsPage() {
     // Обновляем участников
     const membersContainer = document.querySelector('.members-container');
     if (membersContainer) {
-      membersContainer.innerHTML = `
-        <div class="members-grid">
-          ${renderMembers(stats.roleMembers)}
-        </div>
-      `;
+      membersContainer.innerHTML = renderMembers(stats.roleMembers);
     }
 
     // Обновляем информацию о программе
@@ -436,8 +601,8 @@ async function initStatsPage() {
         statsContainer.innerHTML = renderStats(stats);
       }
 
-      const membersContainer = document.querySelector('.members-container .members-grid');
-      if (membersContainer) {
+      const membersContainer = document.querySelector('.members-container');
+      if (membersContainer && !membersContainer.querySelector('.loading-spinner')) {
         membersContainer.innerHTML = renderMembers(stats.roleMembers);
       }
       
@@ -447,6 +612,10 @@ async function initStatsPage() {
     }
   }, 5 * 60 * 1000); // 5 минут
 }
+
+// Делаем функции доступными глобально для onclick handlers
+window.showAllMembers = showAllMembers;
+window.changePage = changePage;
 
 // Инициализация при загрузке DOM
 document.addEventListener('DOMContentLoaded', initStatsPage);
