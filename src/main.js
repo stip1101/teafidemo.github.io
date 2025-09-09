@@ -1,7 +1,7 @@
 import './style.css'
 
 // API Configuration
-const API_BASE_URL = 'http://194.213.3.158:8104/api';
+const API_BASE_URL = 'https://api.tea-fi-ambassadors.com/api';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 минут
 
 // Кеширование
