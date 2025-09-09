@@ -4,11 +4,8 @@ cssLink.rel = 'stylesheet';
 cssLink.href = '/assets/index-BeX95CMX.css'; // Путь к скомпилированному CSS в dist
 document.head.appendChild(cssLink);
 
-// API Configuration - ваш PebbleHost сервер
-const API_ENDPOINTS = [
-  'https://194.213.3.158:8104/api',  // Пробуем HTTPS сначала
-  'http://194.213.3.158:8104/api'   // Fallback на HTTP
-];
+// API Configuration - HTTPS через reverse proxy
+const API_BASE_URL = 'https://api.tea-fi-ambassadors.com/api';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 минут
 
 // Кеширование
@@ -27,42 +24,31 @@ async function fetchDiscordStats() {
     return statsCache;
   }
 
-  // Пробуем каждый эндпоинт по очереди
-  let lastError = null;
-  
-  for (const apiUrl of API_ENDPOINTS) {
-    try {
-      console.log(`Trying API endpoint: ${apiUrl}`);
-      const response = await fetch(`${apiUrl}/all-stats`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  try {
+    console.log(`Trying HTTPS API endpoint: ${API_BASE_URL}`);
+    const response = await fetch(`${API_BASE_URL}/all-stats`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
       }
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        console.log(`✅ Successfully fetched data from ${apiUrl}`);
-        statsCache = data.data;
-        cacheTimestamp = Date.now();
-        return data.data;
-      } else {
-        throw new Error(data.error || 'Failed to fetch stats');
-      }
-    } catch (error) {
-      console.warn(`❌ Failed to fetch from ${apiUrl}:`, error.message);
-      lastError = error;
-      continue; // Пробуем следующий эндпоинт
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  }
-  
-  // Если все эндпоинты не сработали
-  console.error('All API endpoints failed:', lastError);
+    
+    const data = await response.json();
+    
+    if (data.success) {
+      console.log(`✅ Successfully fetched data from ${API_BASE_URL}`);
+      statsCache = data.data;
+      cacheTimestamp = Date.now();
+      return data.data;
+    } else {
+      throw new Error(data.error || 'Failed to fetch stats');
+    }
+  } catch (error) {
+    console.error('API request failed:', error);
     
     // Возвращаем моковые данные при ошибке
     const mockData = {
