@@ -1,5 +1,46 @@
 import './style.css'
 
+// API Configuration
+const API_BASE_URL = 'http://194.213.3.158:8104/api';
+const CACHE_DURATION = 5 * 60 * 1000; // 5 минут
+
+// Кеширование
+let statsCache = null;
+let cacheTimestamp = null;
+
+// Функция для получения статистики Discord
+async function fetchDiscordStats() {
+  // Проверяем кеш
+  if (statsCache && cacheTimestamp && (Date.now() - cacheTimestamp < CACHE_DURATION)) {
+    return statsCache;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/all-stats`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    
+    if (data.success) {
+      statsCache = data.data;
+      cacheTimestamp = Date.now();
+      return data.data;
+    } else {
+      throw new Error(data.error || 'Failed to fetch stats');
+    }
+  } catch (error) {
+    console.error('Error fetching Discord stats:', error);
+    
+    // Возвращаем статичные данные при ошибке
+    return {
+      roleMembers: [],
+      channelStats: { messageCount: 1838 },
+      programUptime: { totalDays: 138 }
+    };
+  }
+}
+
 // Initialize the app
 document.querySelector('#app').innerHTML = `
   <!-- Navigation -->
@@ -82,7 +123,7 @@ document.querySelector('#app').innerHTML = `
                 <i class="fas fa-users"></i>
               </div>
               <div class="main-stat-info">
-                <h3 class="main-stat-number">76</h3>
+                <h3 class="main-stat-number" id="total-participants">76</h3>
                 <p class="main-stat-label">Total Participants</p>
               </div>
             </div>
@@ -94,7 +135,7 @@ document.querySelector('#app').innerHTML = `
                 <i class="fas fa-hands-helping"></i>
               </div>
               <div class="main-stat-info">
-                <h3 class="main-stat-number">1,838</h3>
+                <h3 class="main-stat-number" id="total-contributions">1,838</h3>
                 <p class="main-stat-label">Total Contributions</p>
               </div>
             </div>
@@ -854,8 +895,40 @@ function initInteractivity() {
 // Make toggleFAQ function global
 window.toggleFAQ = toggleFAQ;
 
+// Функция для обновления статистики на главной странице
+async function updateMainPageStats() {
+  try {
+    const stats = await fetchDiscordStats();
+    
+    // Обновляем количество участников
+    const participantsElement = document.getElementById('total-participants');
+    if (participantsElement && stats.roleMembers) {
+      participantsElement.textContent = stats.roleMembers.length || 76;
+    }
+    
+    // Обновляем количество вкладов
+    const contributionsElement = document.getElementById('total-contributions');
+    if (contributionsElement && stats.channelStats) {
+      contributionsElement.textContent = stats.channelStats.messageCount || 1838;
+    }
+    
+    console.log('Main page stats updated:', stats);
+  } catch (error) {
+    console.error('Failed to update main page stats:', error);
+  }
+}
+
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initInteractivity);
+document.addEventListener('DOMContentLoaded', () => {
+  initInteractivity();
+  updateMainPageStats();
+});
 
 // Initialize immediately since we're setting innerHTML
-setTimeout(initInteractivity, 100);
+setTimeout(() => {
+  initInteractivity();
+  updateMainPageStats();
+}, 100);
+
+// Автообновление статистики каждые 5 минут
+setInterval(updateMainPageStats, 5 * 60 * 1000);

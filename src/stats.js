@@ -86,6 +86,7 @@ function getRoleColor(role) {
     'Tea Fan': '#FF4DA6',
     'Tea Enjoyer': '#FFB3D9',
     'Tea Chad': '#E6006E',
+    'Trainee': '#4A90E2',
     'Ambassador': '#FF007A'
   };
   return colors[role] || '#FF007A';
@@ -98,7 +99,8 @@ function getRolePriority(role) {
     'Tea Fan': 2,
     'Tea Enjoyer': 3,
     'Tea Chad': 4,
-    'Ambassador': 5   // Высшая роль
+    'Trainee': 5,
+    'Ambassador': 6   // Высшая роль
   };
   return priorities[role] || 0;
 }
