@@ -1,4 +1,8 @@
-import './style.css'
+// Подключаем CSS динамически для совместимости с деплоем
+const cssLink = document.createElement('link');
+cssLink.rel = 'stylesheet';
+cssLink.href = '/assets/index-BeX95CMX.css'; // Путь к скомпилированному CSS в dist
+document.head.appendChild(cssLink);
 
 // API Configuration - ваш PebbleHost сервер
 const API_BASE_URL = 'http://194.213.3.158:8104/api';
