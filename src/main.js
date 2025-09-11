@@ -7,6 +7,37 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 минут
 // Кеширование
 let statsCache = null;
 let cacheTimestamp = null;
+let sugarCubesCache = null;
+let sugarCubesTimestamp = null;
+
+// Функция для получения Sugar Cubes статистики
+async function fetchSugarCubes() {
+  // Проверяем кеш
+  if (sugarCubesCache && sugarCubesTimestamp && (Date.now() - sugarCubesTimestamp < CACHE_DURATION)) {
+    return sugarCubesCache;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/engage-cubes`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    
+    if (data.success) {
+      sugarCubesCache = data.data;
+      sugarCubesTimestamp = Date.now();
+      return data.data;
+    } else {
+      throw new Error(data.error || 'Failed to fetch sugar cubes');
+    }
+  } catch (error) {
+    console.error('Error fetching sugar cubes:', error);
+    
+    // Возвращаем статичные данные при ошибке
+    return { amount: 150750 };
+  }
+}
 
 // Функция для получения статистики Discord
 async function fetchDiscordStats() {
@@ -149,7 +180,7 @@ document.querySelector('#app').innerHTML = `
               <i class="fas fa-cube"></i>
             </div>
             <div class="main-sugar-cubes-info">
-              <h3 class="main-sugar-cubes-number">150,750</h3>
+              <h3 class="main-sugar-cubes-number" id="total-sugar-cubes">150,750</h3>
               <p class="main-sugar-cubes-label">Total Sugar Cubes Earned</p>
             </div>
             <div class="main-sugar-cubes-decoration">
@@ -898,7 +929,11 @@ window.toggleFAQ = toggleFAQ;
 // Функция для обновления статистики на главной странице
 async function updateMainPageStats() {
   try {
-    const stats = await fetchDiscordStats();
+    // Получаем основную статистику и Sugar Cubes параллельно
+    const [stats, sugarCubes] = await Promise.all([
+      fetchDiscordStats(),
+      fetchSugarCubes()
+    ]);
     
     // Обновляем количество участников
     const participantsElement = document.getElementById('total-participants');
@@ -912,7 +947,15 @@ async function updateMainPageStats() {
       contributionsElement.textContent = stats.channelStats.messageCount || 1838;
     }
     
-    console.log('Main page stats updated:', stats);
+    // Обновляем Sugar Cubes
+    const sugarCubesElement = document.getElementById('total-sugar-cubes');
+    if (sugarCubesElement && sugarCubes) {
+      // Форматируем число с запятыми для лучшей читаемости
+      const formattedAmount = (sugarCubes.amount || 150750).toLocaleString();
+      sugarCubesElement.textContent = formattedAmount;
+    }
+    
+    console.log('Main page stats updated:', { stats, sugarCubes });
   } catch (error) {
     console.error('Failed to update main page stats:', error);
   }
