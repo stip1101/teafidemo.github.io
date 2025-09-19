@@ -1,8 +1,4 @@
-// Подключаем CSS динамически для совместимости с деплоем
-const cssLink = document.createElement('link');
-cssLink.rel = 'stylesheet';
-cssLink.href = '/assets/index-BeX95CMX.css'; // Путь к скомпилированному CSS в dist
-document.head.appendChild(cssLink);
+import './style.css'
 
 // API Configuration - HTTPS через reverse proxy
 const API_BASE_URL = 'https://api.tea-fi-ambassadors.com/api';
