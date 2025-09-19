@@ -1,5 +1,23 @@
 import './style.css'
 
+// MetaMask conflict prevention
+if (typeof window !== 'undefined' && window.ethereum && Object.getOwnPropertyDescriptor(window, 'ethereum')) {
+  // Store the original ethereum object and delete it temporarily
+  const originalEthereum = window.ethereum;
+  try {
+    delete window.ethereum;
+    // Re-assign it as a non-configurable property
+    Object.defineProperty(window, 'ethereum', {
+      value: originalEthereum,
+      writable: false,
+      configurable: false
+    });
+  } catch (e) {
+    // If we can't redefine it, just leave it as is
+    console.warn('MetaMask ethereum object could not be redefined:', e);
+  }
+}
+
 // API Configuration - HTTPS через reverse proxy
 const API_BASE_URL = 'https://api.tea-fi-ambassadors.com/api';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 минут
