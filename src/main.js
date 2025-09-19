@@ -189,6 +189,12 @@ document.querySelector('#app').innerHTML = `
               <div class="main-cube-particle main-cube-3"></div>
             </div>
           </div>
+          <a href="stats.html" class="stats-page-btn">
+            <span>View Detailed Stats</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
         
         <h2 class="getting-started-title">Ready to Start Your Journey?</h2>
@@ -315,7 +321,7 @@ document.querySelector('#app').innerHTML = `
           <div class="role-icon-modern">
             <img src="/tea-enjoyer.webp" alt="Tea Enjoyer" style="width: 48px; height: 48px;" />
           </div>
-          <h3>Tea Enjoyer</h3>
+          <h3>Tea Master</h3>
           <p>Deeper involvement in events, organizational activities and community building.</p>
         </div>
         

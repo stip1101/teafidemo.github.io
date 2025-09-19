@@ -36,6 +36,42 @@
   --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Stats Page Button */
+.stats-page-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-pink);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: var(--transition);
+  margin-top: 16px;
+  box-shadow: 0 4px 20px rgba(255, 0, 122, 0.3);
+  border: 1px solid transparent;
+}
+
+.stats-page-btn:hover {
+  background: #e6006d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 0, 122, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.stats-page-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: var(--transition);
+}
+
+.stats-page-btn:hover svg {
+  transform: translateX(3px);
+}
+
 body {
   font-family: var(--font-family);
   background: var(--gradient-bg);

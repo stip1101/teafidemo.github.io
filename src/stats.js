@@ -128,7 +128,7 @@ function getRoleColor(role) {
   const colors = {
     'Tea-OG': '#FF007A',
     'Tea Fan': '#FF4DA6',
-    'Tea Enjoyer': '#FFB3D9',
+    'Tea Master': '#FFB3D9',
     'Tea Chad': '#E6006E',
     'Trainee': '#4A90E2',
     'Ambassador': '#FF007A'
@@ -141,7 +141,7 @@ function getRolePriority(role) {
   const priorities = {
     'Tea-OG': 1,      // Базовая роль
     'Tea Fan': 2,
-    'Tea Enjoyer': 3,
+    'Tea Master': 3,
     'Tea Chad': 4,
     'Trainee': 5,
     'Ambassador': 6   // Высшая роль
